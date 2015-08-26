@@ -1,0 +1,20 @@
+{
+  "intro": "Here are some projects I have built.",
+  "projects": [
+    {
+      "name": "Simple Weather App",
+      "imgUrl": "http://i.imgur.com/IF9VEaV.png",
+      "link": "http://codepen.io/snarisi/full/EjewEz"
+    },
+    {
+      "name": "Free Code Camp News",
+      "imgUrl": "http://i.imgur.com/aUmkw6x.png", 
+      "link": "http://codepen.io/snarisi/full/mJZPqm"
+    },
+    {
+      "name": "Twitch Status",
+      "imgUrl": "http://i.imgur.com/Vt7UlX9.png",
+      "link": "http://codepen.io/snarisi/full/JdVLRp"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!--add style, script, bootstrap/normalize, meta-->
+    <title>Sam Narisi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400|Roboto:400,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.mobile.custom.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="app.js"></script>
+  </head>
+  
+
+
+  
+  <body ng-app="app">
+
+    <div class="page">    
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button class="btn btn-info home-link">Sam Narisi</button>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sn-main-nav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse pull-right" id="sn-main-nav">
+            <ul class="nav navbar-nav">
+              <li><button class="btn btn-default about-link">About</button></li>
+              <li><button class="btn btn-default work-link">Work</button></li>
+              <li><button class="btn btn-default contact-link">Contact</button></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      
+    
+      <div class="jumbotron page-container">
+        <div id="jumbotron">
+          <h1 class="text-center">Sam Narisi</h1>
+          <h3 class="text-center">Fullstack Web Developer</h3>
+        </div>
+        <div id="about-cta" class="button-holder">
+          <button class="btn btn-info center-block about-link">ABOUT ME</button>
+        </div>
+      </div>
+    
+      <div class="page-container" id="about-container" ng-controller="aboutCtrl">
+        <div id="about" class="center-block">
+          <div id="about-body">
+            <h2 class="fadein450">About</h2>
+            <p class="fadein600">{{about.primary}}</p>
+            <p class="fadein700" ng-show="!isMobile">{{about.secondary}}</p>
+          </div>
+          <div class="button-holder">
+            <button class="btn btn-info center-block work-link fadein800 clearfix">MY WORK</button>
+          </div>
+        </div>
+      </div>
+
+      <div ng-controller="workCtrl" class="page-container" id="work-container">
+        <div id="work" class="center-block">
+          <div id="work-body">
+            <h2 class="fadein450">Work</h2>
+            <p class="fadein600">{{work.intro}}</p>
+
+            <!--grid for desktop-->
+            <div ng-show="!isMobile" class="container-fluid fadein700" id="work-grid-desktop">
+              <div ng-repeat="row in rows" class="row">
+                <div ng-repeat="project in row.columns" class="col-sm-4">
+                  <a href="{{project.link}}" target="blank">
+                    <h4 class="text text-center">{{project.name}}</h4>
+                    <div class="image-container"><img ng-src="{{project.imgUrl}}" class="img-responsive"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!--carousel for mobile-->
+            <div ng-show="isMobile" class="fadein700">
+              <div id="work-carousel-mobile" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner" role="listbox">
+                  <div ng-repeat="project in work.projects" class="item" ng-class="{active: $first}">
+                    <a href="{{project.link}}" target="_blank">
+                      <h4 class="text-center">{{project.name}}</h4>
+                      <div class="image-container"><img ng-src="{{project.imgUrl}}" class="img-responsive center-block"></div>
+                    </a>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#work-carousel-mobile" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#work-carousel-mobile" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="button-holder">
+            <button class="btn btn-info center-block contact-link fadein800">CONTACT</button>
+          </div>
+        </div>
+      </div>
+
+      <div ng-controller="contactCtrl" class="page-container" id="contact-container">
+        <div id="contact" class="center-block">
+          <div id="contact-body">
+            <h2 class="fadein450">Contact</h2>
+            <p class="fadein600">{{contact.intro}}</p>
+            <div class="container-fluid fadein700">
+              <div class="row">
+                <div class="col-sm-4">
+                  <a href="{{contact.emailUrl}}" target="_blank">
+                    <h3 class="text-center icon"><i class="fa fa-envelope"></i></h3>
+                    <h4 class="text-center">{{contact.email}}</h4>
+                  </a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="{{contact.githubUrl}}" target="_blank">
+                    <h3 class="text-center icon"><i class="fa fa-github-square"></i></h3>
+                    <h4 class="text-center">{{contact.github}}</h4>
+                  </a>
+                </div>
+                <div class="col-sm-4">
+                  <a href="{{contact.linkedinUrl}}" target="_blank">
+                    <h3 class="text-center icon"><i class="fa fa-linkedin-square"></i></h3>
+                    <h4 class="text-center">{{contact.linkedin}}</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="hide-on-mobile"></div>
+    </div>
+
+  </body>
+
+</html>

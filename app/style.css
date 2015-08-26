@@ -1,0 +1,237 @@
+html, body {
+  height: 100%;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+
+img {
+  opacity: 0.7;
+  border-radius: 10px;
+  -webkit-filter: grayscale(20%);
+  filter: grayscale(20%);
+}
+
+a:hover img {
+  opacity: 1;
+  -webkit-filter: none;
+  filter: none;
+
+}
+
+h4 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.fadein450 {
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 450ms;
+  animation-nameL fadein;
+  animation-duration: 450ms;
+}
+
+.fadein600 {
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 600ms;
+  animation-nameL fadein;
+  animation-duration: 600ms;
+}
+
+.fadein700 {
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 700ms;
+  animation-name: fadein;
+  animation-duration: 700ms;
+}
+
+.fadein800 {
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 800ms;
+  animation-name: fadein;
+  animation-duration: 800ms;
+}
+
+.imagefadein700 {
+  -webkit-animation-name: imagefadein;
+  -webkit-animation-duration: 700ms;
+  animation-name: imagefadein;
+  animation-duration: 700ms;  
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@-webbit-keyframes imagefadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+@keyframes imagefadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+
+.navbar-nav li {
+  display: inline-block;
+}
+
+.jumbotron {
+  margin: 0;
+}
+
+.btn-default:focus {
+  outline: inherit!important;
+  border-color: #ccc;
+  background-color: #fff;
+}
+
+.btn-default:hover {
+  background-color: #e6e6e6!important;
+  border-color: #adadad!important;
+}
+
+#about, #work, #contact {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.page {
+  padding-top: 65px;
+  height: 100%;
+}
+
+.page-container {
+  min-height: 100%;
+  position: relative;
+}
+
+.home-link, .navbar-toggle {
+  margin: 15px 12px 15px 12px;
+}
+
+.navbar-collapse {
+  margin-bottom: 15px;
+}
+
+li button {
+  margin: 15px 12px 15px 0;
+}
+
+.button-holder {
+  height: 74px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#about, #work, #contact {
+  display: none;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+#work-grid-desktop {
+  margin-top: 20px;
+}
+
+/*make sure there's room for the buttons */
+#about-body, #work-body, #contact-body {
+  margin-bottom: 34px;
+}
+
+.project {
+  text-align: center;
+}
+
+.carousel {
+  height:250px;
+  background-color: #eee;
+  margin: 20px -20px 0 -20px; 
+}
+
+.item {
+  height: 240px;
+}
+
+.carousel-control {
+  background-image: none!important;
+}
+
+#work-carousel-mobile {
+  vertical-align: bottom;
+}
+
+@media (max-width: 767px) {
+  #hide-on-mobile {
+    display: none;
+  }
+  #about, #work, #contact {
+    padding: 5px 20px 5px 20px;
+  }
+  .carousel {
+    margin-top: 10px;
+  }
+  .button-holder {
+    height: 50px;
+  }
+  .image-container {
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    
+  }
+}
+
+@media (max-height: 400px) {
+  .button-holder {
+    position: relative;
+  }
+}
